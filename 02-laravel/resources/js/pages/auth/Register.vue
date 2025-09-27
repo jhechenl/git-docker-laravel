@@ -16,7 +16,7 @@ import { LoaderCircle } from 'lucide-vue-next';
         title="Create an account"
         description="Enter your details below to create your account"
     >
-        <Head title="Register" />
+        <Head title="Register (test)" />
 
         <Form
             v-bind="RegisteredUserController.store.form()"
