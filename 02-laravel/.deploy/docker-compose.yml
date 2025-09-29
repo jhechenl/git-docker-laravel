@@ -4,7 +4,9 @@ services:
     build:
       context: ../
       dockerfile: DockerfileLaravel
-    container_name: laravel-app 
+    container_name: laravel-app
+    volumes:
+      - build:/var/www/public:ro
     restart: always    
     env_file:
       - ./laravel-app.env
@@ -16,6 +18,8 @@ services:
       context: ../
       dockerfile: DockerfileNginx
     container_name: laravel-nginx
+    volumes:
+      - build:/var/www/public
     restart: always
     ports:
       - "8080:80"    
@@ -35,3 +39,4 @@ services:
 
 volumes:
   db_data:
+  build:
